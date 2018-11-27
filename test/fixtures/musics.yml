@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  lyric: MyString
   artist: MyString
+  lyric: MyString
   url_image: MyString
 
 two:
   title: MyString
-  lyric: MyString
   artist: MyString
+  lyric: MyString
   url_image: MyString
