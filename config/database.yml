@@ -17,10 +17,6 @@
 #   username: adventist_camp
 #   password: <%= ENV['ADVENTIST_CAMP_DATABASE_PASSWORD'] %>
 
-
-
-
-
 development:
   adapter: postgresql
   encoding: unicode
