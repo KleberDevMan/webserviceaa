@@ -1,43 +1,46 @@
-# default: &default
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-# development:
-#   <<: *default
-#   database: adventist_camp_development
-
-# test:
-#   <<: *default
-#   database: adventist_camp_test
-
-# production:
-#   <<: *default
-#   database: adventist_camp_production
-#   username: adventist_camp
-#   password: <%= ENV['ADVENTIST_CAMP_DATABASE_PASSWORD'] %>
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: postgresql
-  encoding: unicode
-  database: app3_db_development
-  pool: 5
-  username: postgres
-  password: 123
+  <<: *default
+  database: adventist_camp_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
-  database: app3_db_test
-  pool: 5
-  username: postgres
-  password: 123
+  <<: *default
+  database: adventist_camp_test
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: app3_db_production
-  pool: 5
-  username: postgres
-  password: 123
+  <<: *default
+  database: adventist_camp_production
+  username: adventist_camp
+  password: <%= ENV['ADVENTIST_CAMP_DATABASE_PASSWORD'] %>
+
+
+
+  
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: app3_db_development
+#   pool: 5
+#   username: postgres
+#   password: 123
+
+# test:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: app3_db_test
+#   pool: 5
+#   username: postgres
+#   password: 123
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: app3_db_production
+#   pool: 5
+#   username: postgres
+#   password: 123
 
