@@ -1,24 +1,15 @@
-# README
+# Comandos 
+MOSTRA TODAS AS TASKS RAILS
+>> rails -T
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+DROPA, CRIA E SETA
+>> rails db:drop db:create db:migrate db:seed
 
-Things you may want to cover:
+ou
+>> rails dev:setup
 
-* Ruby version
+INSTUÇÕES DO SISTEMA DENTRO DO IRB
+>> %x(ls)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+BIBLIOTECA PARA LOAD DE TASK
+>> TTY Gems
