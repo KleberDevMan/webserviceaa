@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Link Playlist Videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @link_playlist_videos.each do |link_playlist_video| %>
+      <tr>
+        <td><%= link_playlist_video.link %></td>
+        <td><%= link_to 'Show', link_playlist_video %></td>
+        <td><%= link_to 'Edit', edit_link_playlist_video_path(link_playlist_video) %></td>
+        <td><%= link_to 'Destroy', link_playlist_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Link Playlist Video', new_link_playlist_video_path %>

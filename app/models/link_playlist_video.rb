@@ -1,0 +1,2 @@
+class LinkPlaylistVideo < ApplicationRecord
+end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :contacts
+  resources :link_playlist_videos
   resources :musics
   resources :infos
   resources :scripts
