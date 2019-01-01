@@ -4,27 +4,33 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Artist</th>
-      <th>Lyric</th>
-      <th>Url image</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Lyric</th>
+    <th>Url image</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @musics.each do |music| %>
-      <tr>
-        <td><%= music.title %></td>
-        <td><%= music.artist %></td>
-        <td><%= music.lyric %></td>
-        <td><%= image_tag music.url_image, width:50, height: 50 %></td>
-        <td><%= link_to 'Show', music %></td>
-        <td><%= link_to 'Edit', edit_music_path(music) %></td>
-        <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @musics.each do |music| %>
+    <tr>
+      <td><%= music.title %></td>
+      <td><%= music.artist %></td>
+      <td><%= music.lyric %></td>
+
+      <% begin %>
+        <td><%= image_tag music.url_image, width: 50, height: 50 %></td>
+      <% rescue %>
+        <td><%= image_tag 'https://developers.google.com/maps/documentation/streetview/images/error-image-generic.png', width: 50, height: 50 %></td>
+      <% end %>
+
+      <td><%= link_to 'Show', music %></td>
+      <td><%= link_to 'Edit', edit_music_path(music) %></td>
+      <td><%= link_to 'Destroy', music, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 
