@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AdventistCamp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>AdventistCamp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<!--  navegacao-->
+<ul>
+  <li><%= link_to('Musicas', musics_path) %></li>
+  <li><%= link_to('Informações', infos_path) %></li>
+  <li><%= link_to('Roteiros', scripts_path) %></li>
+  <li><%= link_to('Playlist de videos', link_playlist_videos_path) %></li>
+  <li><%= link_to('Contatos', contacts_path) %></li>
+  <li style="float:right"><%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
+</ul>
+
+<%= yield %>
+</body>
 </html>
