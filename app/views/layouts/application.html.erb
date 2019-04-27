@@ -6,20 +6,41 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <script type="text/javascript">
-      (function(p,u,s,h){
-          p._pcq=p._pcq||[];
-          p._pcq.push(['_currentTime',Date.now()]);
-          s=u.createElement('script');
-          s.type='text/javascript';
-          s.async=true;
-          s.src='https://cdn.pushcrew.com/js/980d9871b3a73a9a5afb06722b1d16a3.js';
-          h=u.getElementsByTagName('script')[0];
-          h.parentNode.insertBefore(s,h);
-      })(window,document);
-  </script>
+  <!--  PUSHCREW-->
+
+  <!--  <script type="text/javascript">-->
+  <!--      (function(p,u,s,h){-->
+  <!--          p._pcq=p._pcq||[];-->
+  <!--          p._pcq.push(['_currentTime',Date.now()]);-->
+  <!--          s=u.createElement('script');-->
+  <!--          s.type='text/javascript';-->
+  <!--          s.async=true;-->
+  <!--          s.src='https://cdn.pushcrew.com/js/980d9871b3a73a9a5afb06722b1d16a3.js';-->
+  <!--          h=u.getElementsByTagName('script')[0];-->
+  <!--          h.parentNode.insertBefore(s,h);-->
+  <!--      })(window,document);-->
+  <!--  </script>-->
+
+
+  <!--  PUSHER-->
+
+
+  <!--  <script>-->
+  <!--      // Enable pusher logging - don't include this in production-->
+  <!--      Pusher.logToConsole = true;-->
+
+  <!--      var pusher = new Pusher('1342c56cac16a2efb5f6', {-->
+  <!--          cluster: 'us2',-->
+  <!--          forceTLS: true-->
+  <!--      });-->
+
+  <!--      var channel = pusher.subscribe('my-channel');-->
+  <!--      channel.bind('my-event', function(data) {-->
+  <!--          alert(JSON.stringify(data));-->
+  <!--      });-->
+  <!--  </script>-->
+
 </head>
 
 <body>
@@ -30,12 +51,13 @@
   <li><%= link_to('Roteiros', scripts_path) %></li>
   <li><%= link_to('Playlist de videos', link_playlist_videos_path) %></li>
   <li><%= link_to('Contatos', contacts_path) %></li>
-<!--  <li style="float:right"><%#= link_to 'Sair', destroy_user_session_path, method: :delete %></li>-->
+  <!--  <li style="float:right"><%#= link_to 'Sair', destroy_user_session_path, method: :delete %></li>-->
 
 </ul>
 
 <%= yield %>
 
-
+<script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </body>
 </html>
