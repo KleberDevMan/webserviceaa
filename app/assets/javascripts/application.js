@@ -18,35 +18,38 @@
 
 //-- SCRIPT DO PUSH ----------
 
-// Enable pusher logging - don't include this in production
-Pusher.logToConsole = true;
-
-var pusher = new Pusher('1342c56cac16a2efb5f6', {
-    cluster: 'us2',
-    forceTLS: true
-});
-
-// ------------
-
-
-function getNotificationPermission() {
-    if (Notification.permission != "granted") {
-        Notification.requestPermission(function (status) {
-            alert("Permissão concedida pelo usuário: " + status);
-        });
-    }
-}
-
-function showNotifications() {
-    if (Notification.permission == "granted") {
-
-        var channel = pusher.subscribe('kleber-notifications');
-        channel.bind('new-notification', function (data) {
-            new Notification(data);
-        });
-    }
-}
-
-getNotificationPermission();
-
-showNotifications();
+//// Enable pusher logging - don't include this in production
+// Pusher.logToConsole = true;
+//
+// var pusher = new Pusher('1342c56cac16a2efb5f6', {
+//     cluster: 'us2',
+//     forceTLS: true
+// });
+//
+// // ------------
+//
+//
+// function getNotificationPermission() {
+//     if (Notification.permission != "granted") {
+//         Notification.requestPermission(function (status) {
+//             alert("Permissão concedida pelo usuário: " + status);
+//         });
+//     }
+// }
+//
+// function showNotifications() {
+//     if (Notification.permission == "granted") {
+//
+//         var channel = pusher.subscribe('kleber-notifications');
+//         channel.bind('new-notification', function (data) {
+//             new Notification(data);
+//
+//         });
+//     }
+// }
+//
+//
+//
+// getNotificationPermission();
+//
+// showNotifications();

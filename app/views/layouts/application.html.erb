@@ -7,6 +7,64 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+
+  <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+  <script>
+
+      // Enable pusher logging - don't include this in production
+      Pusher.logToConsole = true;
+
+      var pusher = new Pusher('1342c56cac16a2efb5f6', {
+          cluster: 'us2',
+          forceTLS: true
+      });
+
+      // var channel = pusher.subscribe('my-channel');
+      // channel.bind('my-event', function (data) {
+      //     // alert(JSON.stringify(data));
+      //     new Notification(JSON.stringify(data));
+      // });
+      //
+      // if (Notification.permission != "granted") {
+      //     Notification.requestPermission(function (status) {
+      //         alert("Permissão concedida pelo usuário: " + status);
+      //     });
+      // }
+      //
+      // if (Notification.permission == "granted") {
+      //     var channel = pusher.subscribe('my-channel');
+      //     channel.bind('my-event', function (data) {
+      //         new Notification(data);
+      //     });
+      // }
+
+
+      // function getNotificationPermission() {
+          if (Notification.permission != "granted") {
+              Notification.requestPermission(function (status) {
+                  alert("Permissão concedida pelo usuário: " + status);
+              });
+          }
+      // }
+
+      // function showNotifications() {
+          if (Notification.permission == "granted") {
+
+              var channel = pusher.subscribe('channel-123456');
+              channel.bind('event-123456', function (data) {
+                  new Notification(JSON.stringify(data));
+
+              });
+          // }
+      }
+
+      getNotificationPermission();
+
+      showNotifications();
+
+  </script>
+
+
 </head>
 
 <body>
@@ -17,7 +75,7 @@
 <!--  <li><%#= link_to('Roteiros', scripts_path) %></li>-->
 <!--  <li><%#= link_to('Playlist de videos', link_playlist_videos_path) %></li>-->
 <!--  <li><%#= link_to('Contatos', contacts_path) %></li>-->
-  <!--  <li style="float:right"><%#= link_to 'Sair', destroy_user_session_path, method: :delete %></li>-->
+<!--  <li style="float:right"><%#= link_to 'Sair', destroy_user_session_path, method: :delete %></li>-->
 
 <!--</ul>-->
 
